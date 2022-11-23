@@ -1,0 +1,5 @@
+<div class="container" *ngFor="let face of data$ | async" >
+  <img [src]="face.image" [alt]="face"/>
+  <br>
+  {{ face.name }}
+</div>
