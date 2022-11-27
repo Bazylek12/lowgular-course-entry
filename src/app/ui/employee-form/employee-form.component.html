@@ -1,0 +1,11 @@
+<form [formGroup]="employeeForm">
+  <input type="text" formControlName="name" placeholder="Name">
+  <input type="number" formControlName="age" placeholder="Age">
+  <input type="number" formControlName="salary" placeholder="Salary">
+  <input type="submit" value="Submit" [disabled]="employeeForm.invalid">
+</form>
+<br/>
+<div *ngIf="employeeForm.invalid; else employeeInfo">
+</div>
+
+<ng-template #employeeInfo>Your new employee: {{ employeeForm.value.name }}, age: {{ employeeForm.value.age }}, with salary {{ employeeForm.value.salary }}$ will be added to the system</ng-template>
