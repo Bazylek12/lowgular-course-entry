@@ -1,11 +1,46 @@
-<form [formGroup]="employeeForm" (ngSubmit)="onFormSubmitted(employeeForm.value)">
-  <input type="text" formControlName="name" placeholder="Name">
-  <input type="number" formControlName="age" placeholder="Age">
-  <input type="number" formControlName="salary" placeholder="Salary">
-  <input type="submit" value="Submit" [disabled]="employeeForm.invalid">
-</form>
+<div class="row h-100 m-3">
+  <form class="w-25" [formGroup]="employeeForm" (ngSubmit)="onFormSubmitted(employeeForm.value)">
+    <div class="form-group p-2">
+      <label for="name">Employee name</label>
+      <input class="form-control" type="text" formControlName="name" id="name" placeholder="Name">
+    </div>
+    <div class="form-group p-2">
+      <label for="age">Age</label>
+      <input class="form-control" type="number" formControlName="age" id="age" placeholder="Age">
+    </div>
+    <div class="form-group p-2">
+      <label for="salary">Salary</label>
+      <input class="form-control" type="number" formControlName="salary" id="salary" placeholder="Salary">
+    </div>
+    <div class="form-group p-2">
+    <input class="btn btn-primary" type="submit" value="Submit" [disabled]="employeeForm.invalid">
+    </div>
+  </form>
+</div>
 <br/>
 <div *ngIf="employeeForm.invalid; else employeeInfo">
 </div>
 
-<ng-template #employeeInfo>Your new employee: {{ employeeForm.value.name }}, age: {{ employeeForm.value.age }}, with salary {{ employeeForm.value.salary }}$ will be added to the system</ng-template>
+<ng-template #employeeInfo>Your new employee: {{ employeeForm.value.name }}, age: {{ employeeForm.value.age }}, with
+  salary {{ employeeForm.value.salary }}$ will be added to the system
+</ng-template>
+
+<!--<div class="row h-100 justify-content-center align-items-center">-->
+<!--<form class="w-25">-->
+<!--  <div class="form-group">-->
+<!--    <label for="exampleInputEmail1">Email address</label>-->
+<!--    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">-->
+<!--    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <label for="exampleInputPassword1">Password</label>-->
+<!--    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
+<!--  </div>-->
+<!--  <div class="form-group form-check">-->
+<!--    <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--    <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
+<!--  </div>-->
+<!--  <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--</form>-->
+<!--  </div>-->
+
