@@ -1,6 +1,7 @@
-<h1>Employee list</h1>
+<h1 class="d-flex justify-content-center">Employee list</h1>
+<div class="d-flex align-items-center vw-100 justify-content-center">
 <ul *ngIf="data$ | async as data; else empty" class="list-group d-flex align-items-flex-start p-3">
-  <li class="list-group-item d-flex justify-content-between align-items-start w-25" *ngFor="let employee of data">{{ employee.personalNumber }}: {{ employee.name }}.
+  <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let employee of data">{{ employee.personalNumber }}: {{ employee.name }}.
     Email: {{ employee.mail }}
     <button class="d-flex align-items-end btn btn-danger" (click)="remove(employee.personalNumber)">remove</button>
 
@@ -8,3 +9,4 @@
 </ul>
 
 <ng-template #empty> There is no data</ng-template>
+</div>

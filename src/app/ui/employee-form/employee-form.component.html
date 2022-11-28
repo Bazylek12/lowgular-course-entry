@@ -1,5 +1,6 @@
+<div class="d-flex align-items-center vw-100 justify-content-center flex-wrap">
 <div class="row h-100 m-3">
-  <form class="w-25" [formGroup]="employeeForm" (ngSubmit)="onFormSubmitted(employeeForm.value)">
+  <form [formGroup]="employeeForm" (ngSubmit)="onFormSubmitted(employeeForm.value)">
     <div class="form-group p-2">
       <label for="name">Employee name</label>
       <input class="form-control" type="text" formControlName="name" id="name" placeholder="Name">
@@ -17,30 +18,10 @@
     </div>
   </form>
 </div>
-<br/>
+
+</div>
 <div *ngIf="employeeForm.invalid; else employeeInfo">
 </div>
-
 <ng-template #employeeInfo>Your new employee: {{ employeeForm.value.name }}, age: {{ employeeForm.value.age }}, with
   salary {{ employeeForm.value.salary }}$ will be added to the system
 </ng-template>
-
-<!--<div class="row h-100 justify-content-center align-items-center">-->
-<!--<form class="w-25">-->
-<!--  <div class="form-group">-->
-<!--    <label for="exampleInputEmail1">Email address</label>-->
-<!--    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">-->
-<!--    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
-<!--  </div>-->
-<!--  <div class="form-group">-->
-<!--    <label for="exampleInputPassword1">Password</label>-->
-<!--    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
-<!--  </div>-->
-<!--  <div class="form-group form-check">-->
-<!--    <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
-<!--    <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
-<!--  </div>-->
-<!--  <button type="submit" class="btn btn-primary">Submit</button>-->
-<!--</form>-->
-<!--  </div>-->
-
