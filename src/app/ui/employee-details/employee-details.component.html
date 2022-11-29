@@ -1,0 +1,5 @@
+<ul class="list-group list-group-light d-flex align-items-center justify-content-center p-3">
+  <li class="list-group-item disabled" aria-disabled="true"><h1>Employee details</h1></li>
+  <li class="list-group-item">ID: {{ (data$ | async)?.id }}</li>
+  <li class="list-group-item">Name: {{ (data$ | async)?.name }}</li>
+</ul>
